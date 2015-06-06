@@ -10,7 +10,7 @@ module.exports = {
   attributes: {
     id: {
       type: 'integer',
-      require: true,
+      required: true,
       unique: true,
       autoIncrement: true
     },
@@ -18,6 +18,12 @@ module.exports = {
     description: {
       type: 'string',
       required: true
+    },
+
+    type: {
+      type: 'string',
+      enum: ['Traffic', 'Landscaping', 'Maintenance', 'Litter', 'Other'],
+      defaultsTo: 'Other'
     },
 
     latitude: {
