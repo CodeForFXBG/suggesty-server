@@ -30,7 +30,7 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
    migrate: 'safe'
-   //migrate: 'alter'
+   //migrate: 'alter' does this even do anything?
    
 
 };
