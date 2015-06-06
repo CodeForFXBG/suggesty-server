@@ -7,12 +7,15 @@
 
 module.exports = {
 
+  autoPK: false,
+
   attributes: {
     id: {
       type: 'integer',
       required: true,
       unique: true,
-      autoIncrement: true
+      autoIncrement: true,
+      primaryKey: true
     },
 
     description: {
