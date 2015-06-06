@@ -1,6 +1,6 @@
 <!-- Default home page -->
 <link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
-<style>    
+<style>        
     html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 </style>
 <script type="text/javascript"
@@ -29,7 +29,7 @@
             
             switch (suggestion.type){
                 case 'Traffic': 
-                    image = 'images/type_taffic.png';
+                    image = 'images/type_traffic.png';
                     break;
                 case 'Landscaping':
                     image = 'images/type_landscaping.png';
@@ -55,5 +55,6 @@
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
+    <div id="overlay"><img src="images/suggesty_350.png"/></div>
     <div id="map-canvas"></div>
 </div>
