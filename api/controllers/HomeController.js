@@ -6,6 +6,11 @@
  */
 
 module.exports = {
-	
+	  index: function (req, res) {
+		var suggestions = SuggestionFinder.findSuggestions(0, 0);
+    	return res.view('homepage', {
+			'suggestions': suggestions
+		});
+  	}
 };
 
