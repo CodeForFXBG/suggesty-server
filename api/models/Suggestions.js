@@ -9,9 +9,10 @@ module.exports = {
 
   attributes: {
     id: {
-      type: 'string',
+      type: 'integer',
       require: true,
-      unique: true
+      unique: true,
+      autoIncrement: true
     },
 
     description: {
