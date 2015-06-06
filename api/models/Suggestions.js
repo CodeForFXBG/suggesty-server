@@ -9,14 +9,21 @@ module.exports = {
 
   attributes: {
     id: {
-      type: 'string',
-      require: true,
-      unique: true
+      type: 'integer',
+      required: true,
+      unique: true,
+      autoIncrement: true
     },
 
     description: {
       type: 'string',
       required: true
+    },
+
+    type: {
+      type: 'string',
+      enum: ['Traffic', 'Landscaping', 'Maintenance', 'Litter', 'Other'],
+      defaultsTo: 'Other'
     },
 
     latitude: {
