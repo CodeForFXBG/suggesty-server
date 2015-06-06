@@ -18,13 +18,34 @@
         
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
  
-
         suggestions.forEach(function(suggestion, index) {
             var suggestionLatLng = new google.maps.LatLng(suggestion.latitude, suggestion.longitude);
+            
+            var image = 'images/type_other.png';
+            
+            switch (suggestion.type){
+                case 'Traffic': 
+                    image = 'images/type_taffic.png';
+                    break;
+                case 'Landscaping':
+                    image = 'images/type_landscaping.png';
+                    break;
+                case 'Maintenance':
+                    image = 'images/type_maintenance.png';
+                    break;
+                case 'Litter':
+                    image = 'images/type_litter.png';
+                    break;
+                default:
+                    image = 'images/type_other.png';
+                    break;
+            };
+            
             var marker = new google.maps.Marker({
                 position: suggestionLatLng,
                 map: map,
-                title: suggestion.description
+                title: suggestion.description,
+                icon: image
             });
         });
       }
