@@ -16,9 +16,20 @@ module.exports = {
    * Set the default database connection for models in the development       *
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
+  connections: {
+    postgres: {
+      adapter: 'sails-postgresql',
+      host: 'localhost',
+      user: 'postgres',
+      password: 'suggestypass',
+      database: 'suggesty'
+    }
+  },
 
-  // models: {
-  //   connection: 'someMongodbServer'
-  // }
+
+
+   models: {
+     connection: 'localDiskDb'
+   }
 
 };

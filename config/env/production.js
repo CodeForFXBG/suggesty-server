@@ -17,9 +17,19 @@ module.exports = {
    * environment (see config/connections.js and config/models.js )           *
    ***************************************************************************/
 
-  // models: {
-  //   connection: 'someMysqlServer'
-  // },
+   models: {
+     connection: 'postgres'
+   },
+  connections: {
+    postgres: {
+      adapter: 'sails-postgresql',
+      host: 'ec2-204-236-228-77.compute-1.amazonaws.com',
+      user: process.env.DATABASE_USER,
+      password: process.env.DATABASE_PW,
+      database: process.env.DATABASE_NAME
+    }
+  }
+
 
   /***************************************************************************
    * Set the port in the production environment to 80                        *
