@@ -1,6 +1,6 @@
 <!-- Default home page -->
 <link type="text/css" href='http://sailsjs.org/styles/fonts.css' rel='stylesheet'/>
-<style>        
+<style type="text/css">        
     html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
 </style>
 <script type="text/javascript"
@@ -17,10 +17,16 @@
         
         var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
         
-        navigator.geolocation.getCurrentPosition(function(position){
-           var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-           map.panTo(myLatLng);
-        });        
+        navigator.geolocation.getCurrentPosition(
+            function(position){
+               var myLatLng = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+               map.panTo(myLatLng);
+            },
+            function(err){
+               var fredericksburgLatLng = new google.maps.LatLng(38.3018, -77.4708);
+               map.panTo(fredericksburgLatLng);
+            },
+            {timeout:10000});        
  
         suggestions.forEach(function(suggestion, index) {
             var suggestionLatLng = new google.maps.LatLng(suggestion.latitude, suggestion.longitude);
